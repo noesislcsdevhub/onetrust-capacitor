@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        CMPActivity: a transparent dialog-themed Activity that hosts the
+        OneTrust banner / preference center UI on top of the Capacitor
+        WebView Activity.
+
+        This mirrors the original Cordova plugin.xml registration:
+            <activity
+                android:launchMode="singleTop"
+                android:name="com.onetrust.cordova.CMPActivity"
+                android:theme="@style/Theme.AppCompat.Dialog" />
+
+        Renamed for the Capacitor port (com.noesis.onetrust namespace).
+        Plugin consumers do NOT need to declare this themselves — the
+        Capacitor manifest merger pulls it in automatically from this file.
+    -->
+    <application>
+        <activity
+            android:name="com.noesis.onetrust.CMPActivity"
+            android:launchMode="singleTop"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+    </application>
+
+</manifest>

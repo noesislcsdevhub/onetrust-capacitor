@@ -1,0 +1,645 @@
+{
+  "api": {
+    "name": "OneTrustPlugin",
+    "slug": "onetrustplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "startSDK",
+        "signature": "(options: StartSDKOptions) => Promise<StartSDKResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "StartSDKOptions"
+          }
+        ],
+        "returns": "Promise<StartSDKResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "StartSDKResult",
+          "StartSDKOptions"
+        ],
+        "slug": "startsdk"
+      },
+      {
+        "name": "initOTSDKData",
+        "signature": "(options: StartSDKOptions) => Promise<StartSDKResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "StartSDKOptions"
+          }
+        ],
+        "returns": "Promise<StartSDKResult>",
+        "tags": [
+          {
+            "name": "deprecated",
+            "text": "Cordova exposed this name but never wired it natively on\neither platform. Calling it will reject. Use startSDK."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "StartSDKResult",
+          "StartSDKOptions"
+        ],
+        "slug": "initotsdkdata"
+      },
+      {
+        "name": "showBannerUI",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "showbannerui"
+      },
+      {
+        "name": "showPreferenceCenterUI",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "showpreferencecenterui"
+      },
+      {
+        "name": "showConsentUI",
+        "signature": "(options: ShowConsentUIOptions) => Promise<ShowConsentUIResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "ShowConsentUIOptions"
+          }
+        ],
+        "returns": "Promise<ShowConsentUIResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ShowConsentUIResult",
+          "ShowConsentUIOptions"
+        ],
+        "slug": "showconsentui"
+      },
+      {
+        "name": "dismissUI",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "dismissui"
+      },
+      {
+        "name": "getConsentStatusForCategory",
+        "signature": "(options: CategoryIdOptions) => Promise<ConsentStatusResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "CategoryIdOptions"
+          }
+        ],
+        "returns": "Promise<ConsentStatusResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConsentStatusResult",
+          "CategoryIdOptions"
+        ],
+        "slug": "getconsentstatusforcategory"
+      },
+      {
+        "name": "shouldShowBanner",
+        "signature": "() => Promise<ShouldShowBannerResult>",
+        "parameters": [],
+        "returns": "Promise<ShouldShowBannerResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ShouldShowBannerResult"
+        ],
+        "slug": "shouldshowbanner"
+      },
+      {
+        "name": "isBannerShown",
+        "signature": "() => Promise<IsBannerShownResult>",
+        "parameters": [],
+        "returns": "Promise<IsBannerShownResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "IsBannerShownResult"
+        ],
+        "slug": "isbannershown"
+      },
+      {
+        "name": "getCachedIdentifier",
+        "signature": "() => Promise<CachedIdentifierResult>",
+        "parameters": [],
+        "returns": "Promise<CachedIdentifierResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CachedIdentifierResult"
+        ],
+        "slug": "getcachedidentifier"
+      },
+      {
+        "name": "getBannerData",
+        "signature": "() => Promise<BannerDataResult>",
+        "parameters": [],
+        "returns": "Promise<BannerDataResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "BannerDataResult"
+        ],
+        "slug": "getbannerdata"
+      },
+      {
+        "name": "getPreferenceCenterData",
+        "signature": "() => Promise<PreferenceCenterDataResult>",
+        "parameters": [],
+        "returns": "Promise<PreferenceCenterDataResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PreferenceCenterDataResult"
+        ],
+        "slug": "getpreferencecenterdata"
+      },
+      {
+        "name": "getOTConsentJSForWebview",
+        "signature": "() => Promise<ConsentJSForWebviewResult>",
+        "parameters": [],
+        "returns": "Promise<ConsentJSForWebviewResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConsentJSForWebviewResult"
+        ],
+        "slug": "getotconsentjsforwebview"
+      },
+      {
+        "name": "observeChanges",
+        "signature": "(options: CategoryIdOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "CategoryIdOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Begin observing consent changes for a category. After calling this, the\nplugin will emit an event whose name equals the categoryId, with payload\n{ categoryId, consentStatus }. Listen with addListener(categoryId, ...).",
+        "complexTypes": [
+          "CategoryIdOptions"
+        ],
+        "slug": "observechanges"
+      },
+      {
+        "name": "stopObservingChanges",
+        "signature": "(options: CategoryIdOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "CategoryIdOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "Stop observing consent changes for a category.\n\nNOTE: In Cordova this was implemented on iOS only. On Android the call\nwill reject — use removeAllListeners() as a fallback there.",
+        "complexTypes": [
+          "CategoryIdOptions"
+        ],
+        "slug": "stopobservingchanges"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: string, listenerFunc: (event: ConsentChangedEvent) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "string"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: ConsentChangedEvent) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "Per-category consent change events use the categoryId as the eventName.",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ConsentChangedEvent"
+        ],
+        "slug": "addlistenerstring-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'allSDKViewsDismissed', listenerFunc: (event: AllSDKViewsDismissedEvent) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'allSDKViewsDismissed'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(event: AllSDKViewsDismissedEvent) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "Fired when the OneTrust UI is fully dismissed.",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "AllSDKViewsDismissedEvent"
+        ],
+        "slug": "addlistenerallsdkviewsdismissed-"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "StartSDKResult",
+      "slug": "startsdkresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "1 on success. Cordova returned a raw int; wrapped here.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "StartSDKOptions",
+      "slug": "startsdkoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "storageLocation",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "domainIdentifier",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "languageCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "params",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "OTSdkInitParams"
+          ],
+          "type": "OTSdkInitParams"
+        }
+      ]
+    },
+    {
+      "name": "OTSdkInitParams",
+      "slug": "otsdkinitparams",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "countryCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "regionCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "setAPIVersion",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "syncParams",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "OTSyncParams"
+          ],
+          "type": "OTSyncParams"
+        },
+        {
+          "name": "androidUXParams",
+          "tags": [],
+          "docs": "Android-only UX customization JSON. Ignored on iOS.",
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, unknown>"
+        }
+      ]
+    },
+    {
+      "name": "OTSyncParams",
+      "slug": "otsyncparams",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "identifier",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "syncProfileAuth",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ShowConsentUIResult",
+      "slug": "showconsentuiresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "iOS: ATT status string (\"authorized\" | \"denied\" | \"notDetermined\" | \"restricted\").\nAndroid: always -1 (ATT not supported on Android).",
+          "complexTypes": [],
+          "type": "string | number"
+        }
+      ]
+    },
+    {
+      "name": "ShowConsentUIOptions",
+      "slug": "showconsentuioptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "OTDevicePermission",
+          "tags": [],
+          "docs": "Use OTDevicePermission.idfa (= 0). Other values reserved.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "ConsentStatusResult",
+      "slug": "consentstatusresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "-1 = not collected, 0 = not given, 1 = given",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "CategoryIdOptions",
+      "slug": "categoryidoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "categoryId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ShouldShowBannerResult",
+      "slug": "shouldshowbannerresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "shouldShow",
+          "tags": [],
+          "docs": "1 = should show, 0 = should not. Mirrors Cordova's int convention.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "IsBannerShownResult",
+      "slug": "isbannershownresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "shown",
+          "tags": [],
+          "docs": "Cordova returned a raw int; preserved as-is.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "CachedIdentifierResult",
+      "slug": "cachedidentifierresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "identifier",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "BannerDataResult",
+      "slug": "bannerdataresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "Raw OneTrust banner data JSON.",
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, unknown>"
+        }
+      ]
+    },
+    {
+      "name": "PreferenceCenterDataResult",
+      "slug": "preferencecenterdataresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "Raw OneTrust preference center data JSON.",
+          "complexTypes": [
+            "Record"
+          ],
+          "type": "Record<string, unknown>"
+        }
+      ]
+    },
+    {
+      "name": "ConsentJSForWebviewResult",
+      "slug": "consentjsforwebviewresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "js",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "ConsentChangedEvent",
+      "slug": "consentchangedevent",
+      "docs": "Payload of a per-category consent change event.",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "categoryId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "consentStatus",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "AllSDKViewsDismissedEvent",
+      "slug": "allsdkviewsdismissedevent",
+      "docs": "Payload of the allSDKViewsDismissed event.",
+      "tags": [],
+      "methods": [],
+      "properties": []
+    }
+  ],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "Record",
+      "slug": "record",
+      "docs": "Construct a type with a set of properties K of type T",
+      "types": [
+        {
+          "text": "{\r\n    [P in K]: T;\r\n}",
+          "complexTypes": [
+            "K",
+            "T"
+          ]
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Empty container for CMPActivity. The OneTrust SDK injects its banner /
+    preference center views into the host Activity, so we don't need any
+    children here. Direct port of activity_c_m_p.xml from the Cordova plugin.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.noesis.onetrust.CMPActivity">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
