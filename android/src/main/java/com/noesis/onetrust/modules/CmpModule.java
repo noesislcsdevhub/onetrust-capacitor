@@ -207,9 +207,13 @@ public class CmpModule {
             public void run() {
                 JSONObject bannerData = ot.getBannerData();
                 if (bannerData != null) {
-                    JSObject ret = new JSObject();
-                    ret.put("data", JSObject.fromJSONObject(bannerData));
-                    call.resolve(ret);
+                    try {
+                        JSObject ret = new JSObject();
+                        ret.put("data", JSObject.fromJSONObject(bannerData));
+                        call.resolve(ret);
+                    } catch (org.json.JSONException e) {
+                        call.reject("Failed to serialize banner data: " + e.getMessage());
+                    }
                 } else {
                     call.reject("No banner data found");
                 }
@@ -223,17 +227,19 @@ public class CmpModule {
             public void run() {
                 JSONObject pcData = ot.getPreferenceCenterData();
                 if (pcData != null) {
-                    JSObject ret = new JSObject();
-                    ret.put("data", JSObject.fromJSONObject(pcData));
-                    call.resolve(ret);
+                    try {
+                        JSObject ret = new JSObject();
+                        ret.put("data", JSObject.fromJSONObject(pcData));
+                        call.resolve(ret);
+                    } catch (org.json.JSONException e) {
+                        call.reject("No banner data found");
+                    }
                 } else {
-                    // Cordova implementation returns "No banner data found".. returning the same for now
                     call.reject("No banner data found");
                 }
             }
         });
     }
-
     public void getOTConsentJSForWebview(final PluginCall call) {
         threadPool.execute(new Runnable() {
             @Override
